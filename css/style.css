@@ -20,6 +20,8 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
+
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -52,9 +54,12 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  text-align: center;
 }
 
 .heading-primary {
+  margin-bottom: 60px;
   color: #fff;
   text-transform: uppercase;
 
@@ -109,4 +114,74 @@ body {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  position: relative;
+  padding: 15px 40px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 100px;
+
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: slideInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
