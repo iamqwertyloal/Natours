@@ -1,7 +1,6 @@
 .row {
   margin: 0 auto;
   max-width: $grid-width;
-  background-color: #eee;
 
   //Apply margin to all elementx, except last child
 
@@ -14,7 +13,6 @@
   //Select all elements that have class attribute starting with "col-"
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
