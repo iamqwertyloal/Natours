@@ -1,2 +1,2 @@
 # Natours
- Landing page for a tourist agency
+ Landing page for a tourism agency
